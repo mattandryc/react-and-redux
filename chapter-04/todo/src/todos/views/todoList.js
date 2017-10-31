@@ -40,22 +40,18 @@ const selectVisibleTodos = (todos, filter) => {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    todos: selectVisibleTodos(state.todos, state.filter)
-  };
-}
+const mapStateToProps = (state) => ({
+  todos: selectVisibleTodos(state.todos, state.filter)
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onToggleTodo: (id) => {
-      dispatch(toggleTodo(id));
-    },
-    onRemoveTodo: (id) => {
-      dispatch(removeTodo(id));
-    }
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  onToggleTodo: (id) => {
+    dispatch(toggleTodo(id));
+  },
+  onRemoveTodo: (id) => {
+    dispatch(removeTodo(id));
+  }
+});
 
 /*
 const mapDispatchToProps = (dispatch) => bindActionCreators({
